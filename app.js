@@ -136,7 +136,9 @@ cartButton.onclick = () => {
     }
   }
 
-  console.log(
-    "The total amount is " + finalDollars + "$ and " + finalCents + " cents"
-  );
+  
+   let print= "The total amount is " + finalDollars + "$ and " + finalCents + " cents";
+   console.log(print);
+   window.open('https://wa.me/+919481574558?text=' + encodeURIComponent(print))
+  
 };
