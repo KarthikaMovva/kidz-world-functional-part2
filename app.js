@@ -136,9 +136,17 @@ cartButton.onclick = () => {
     }
   }
 
-  
-   let print= "The total amount is " + finalDollars + "$ and " + finalCents + " cents";
-   console.log(print);
-   window.open('https://wa.me/+919481574558?text=' + encodeURIComponent(print))
-  
-};
+  var applink = 'https://wa.me/+919481574558?text='
+  applink += "Order Details"+" "
+  function Updatepage(){
+  for(let j=0; j < items.length; j++){
+    if(items[j].quantity!=0){
+    applink += items[j].name+ " "+items[j].quantity+" ";}
+  }
+  applink+="$"+finalDollars+"."+finalCents+"cents"
+}
+cartButton.addEventListener("click",()=>{
+  Updatepage();
+updatePrice();
+window.open(applink, '_balnk');
+});}
